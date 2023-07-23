@@ -1,0 +1,67 @@
+#main-container{
+    width:calc(100vw - 256px);
+    height:100vh;
+    padding:0 128px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid var(--border-color);
+}
+
+#main-container > div{
+    display:flex;
+    flex-direction:column;
+    width:35vw;
+}
+
+#main-container > div:first-of-type{
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:16px;
+}
+
+#main-container > div:last-of-type{
+    align-items:flex-end;
+    justify-content:flex-end;
+    position:relative;
+}
+
+#main-container > div:last-of-type > div{
+    width:100%;
+    border-radius:24px;
+    background-image:url("./videos/pattern.gif");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:20vw;
+}
+
+#main-container > div:last-of-type > p{
+    position:absolute;
+    font-weight:500;
+    background:var(--bg-color-2);
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:6px;
+    right:12px;
+    bottom:12px;
+    margin:0;
+    color:black;
+}
+
+#main-container > div:first-of-type > div{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+}
+
+#main-container button{
+    padding:12px;
+    border-radius:6px;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
