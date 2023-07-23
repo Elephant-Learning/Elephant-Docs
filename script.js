@@ -3,7 +3,7 @@ let ctrlDown = false;
 window.addEventListener("keydown", function(e){
     if(e.metaKey || e.keyCode === 17) ctrlDown = true;
 
-    else if (e.keyCode === 75){
+    else if (e.keyCode === 75 && ctrlDown){
         e.preventDefault();
         e.stopPropagation();
         document.getElementById("search-input").focus();

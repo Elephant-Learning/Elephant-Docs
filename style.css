@@ -65,3 +65,35 @@
 button:hover{
     transform:scale(1.05);
 }
+
+#elephant-careers > div{
+    width:calc(50vw - 128px);
+    background-image:url("./videos/pattern.gif");
+    height:20vw;
+    background-repeat:no-repeat;
+    background-size:cover;
+    border-radius:24px;
+    margin:24px 0;
+}
+
+#elephant-careers > button{
+    padding:12px 24px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+#elephant-careers{
+    width:calc(100vw - 256px);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    padding:96px 128px;
+    gap:12px;
+    border-bottom:1px solid var(--border-color);
+    align-items:center;
+}
+
+#elephant-careers > *:not(button){
+    max-width:calc(50vw - 128px);
+    text-align:center;
+}
