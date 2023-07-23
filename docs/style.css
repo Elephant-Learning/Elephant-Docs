@@ -201,6 +201,19 @@
     gap:12px;
 }
 
+#parent-container > *{
+    max-width:calc(100vw - 704px);
+}
+
+#parent-navigation{
+    position:absolute;
+    right:12px;
+    top:56px;
+    height:calc(100vh - 152px);
+    width:208px;
+    padding:48px;
+}
+
 .location{
     display:flex;
     flex-direction:row;

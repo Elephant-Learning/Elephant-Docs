@@ -9,9 +9,22 @@ html {
     --bg-color-1:#ffffff;
     --bg-color-2:#f4f4f5;
     --border-color:#e4e4e7;
-    --border-active:#a1a1aa;
+    --border-active:#d1d1d4;
     --primary-accent:#00a8ff;
     --primary-accent-gradient:#31d6dc;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color-2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-active);
+    border-radius: 20px;
 }
 
 body{
