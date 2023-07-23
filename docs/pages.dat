@@ -4,7 +4,7 @@
 (Pricing)[elephant-pricing]<money>
 (About)[about-us]<about>
 #Services<services>
-(Services)[elephant-services]<dashboard>
+(Elephant Services)[elephant-services]<dashboard>
 (Create Flip Deck)[how-to-create-flip-deck]<new_deck>
 (Study Flip Deck)[how-to-use-flip-deck]<deck>
 (Asking Questions)[asking-questions-with-elephant-ask]<ask>
@@ -14,6 +14,6 @@
 #Features<features>
 (Friending Users)[how-to-friend-user]<add_user>
 (Deleting Account)[how-to-delete-account]<delete_user>
-#Join elephant<job>
+#Join Elephant<job>
 (Careers)[elephant-careers]<team>
 (Contribute)[contribute-to-elephant]<contribute>

@@ -57,12 +57,12 @@
     gap:12px;
 }
 
-#main-container button{
+#main-container a{
     padding:12px;
     border-radius:6px;
 }
 
-button:hover{
+a:hover{
     transform:scale(1.05);
 }
 
@@ -76,7 +76,7 @@ button:hover{
     margin:24px 0;
 }
 
-#elephant-careers > button{
+#elephant-careers > a{
     padding:12px 24px;
     border-radius:6px;
     cursor:pointer;
@@ -93,7 +93,7 @@ button:hover{
     align-items:center;
 }
 
-#elephant-careers > *:not(button){
+#elephant-careers > *:not(a){
     max-width:calc(50vw - 128px);
     text-align:center;
 }

@@ -52,6 +52,20 @@ function updateSidebar(data){
 
             if(location.href.split("/")[location.href.split("/").length - 1] === `${match[2]}.html`){
                 newDiv.classList.add("active-sidebar-dropdown-category");
+
+                const locationDiv = document.createElement("div");
+                const locationImg = document.createElement("img");
+                const locationPara1 = document.createElement("p");
+                const locationPara2 = document.createElement("p");
+
+                locationPara1.innerHTML = headerDiv.children[1].textContent;
+                locationPara2.innerHTML = match[1];
+                locationImg.src = "../icons/sidebar/expand_down.png";
+
+                locationDiv.append(locationPara1, locationImg, locationPara2);
+                locationDiv.classList.add("location");
+
+                document.getElementById("parent-container").insertBefore(locationDiv, document.getElementById("parent-container").firstChild);
             }
 
             para.innerHTML = match[1];
@@ -78,7 +92,16 @@ function updateSidebar(data){
 }
 
 function initialize(){
-    fetch("pages.dat")
+    fetch("pages.dat", {
+	method: 'GET',
+	headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type'
+        },
+	mode: 'cors'
+    })
         .then((res) => res.text())
         .then((text) => {
             updateSidebar(text);
