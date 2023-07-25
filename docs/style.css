@@ -1,3 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
+h2{
+    font-size:24px;
+}
+
+#parent-container p{
+    line-height:18px;
+}
+
 #main-container{
     position:absolute;
     bottom:0;
@@ -198,7 +210,7 @@
     flex-direction:column;
     align-items:flex-start;
     justify-content:flex-start;
-    gap:12px;
+    gap:24px;
 }
 
 #parent-container > *{
@@ -212,6 +224,21 @@
     height:calc(100vh - 152px);
     width:208px;
     padding:48px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#parent-navigation > a{
+    text-decoration:none;
+    color:gray;
+    font-size:14px;
+    font-weight:500;
+    transition-duration:250ms;
+}
+
+#parent-navigation > a:hover{
+    color:black;
 }
 
 .location{
@@ -235,4 +262,66 @@
 
 .location > p:last-of-type{
     color:black;
+}
+
+.accordion{
+    border-top:1px solid var(--border-color);
+}
+
+.accordion > div > div:first-of-type{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+
+.accordion > div{
+    border-bottom:1px solid var(--border-color);
+    padding:24px 12px ;
+    cursor:pointer;
+}
+
+.accordion > div:hover > div:first-of-type > h6{
+    text-decoration:underline;
+}
+
+.accordion > div > div:first-of-type > h6{
+    background:transparent;
+    padding:0 !important;
+    margin:0 !important;
+    width:calc(100% - 48px);
+    font-size:13px;
+    font-weight:700;
+}
+
+.accordion > div > div:first-of-type > img{
+    height:24px;
+    transition-duration:250ms;
+}
+
+.accordion > div:not(.active-accordion) > div:last-of-type{
+    height:0;
+    padding:0;
+}
+
+.accordion > div > div:last-of-type{
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    transition-duration:250ms;
+}
+
+.active-accordion > div:last-of-type{
+    height:auto;
+    padding: 24px 0 0 0;
+}
+
+.accordion a{
+    color:black;
+}
+
+.active-accordion > div:first-of-type > img{
+    transform:rotate(180deg);
 }

@@ -1,3 +1,5 @@
+let link;
+
 function removeAllChildNodes(parent) {
     while(parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -58,6 +60,9 @@ function updateSidebar(data){
                 const locationPara1 = document.createElement("p");
                 const locationPara2 = document.createElement("p");
 
+                link = `${match[2]}.html`;
+                console.log(link);
+
                 locationPara1.innerHTML = headerDiv.children[1].textContent;
                 locationPara2.innerHTML = match[1];
                 locationImg.src = "../icons/sidebar/expand_down.png";
@@ -91,8 +96,8 @@ function updateSidebar(data){
     })
 }
 
-function initialize(){
-    fetch("pages.dat", {
+async function initialize(){
+    await fetch("pages.dat", {
 	method: 'GET',
 	headers: {
             'Content-Type': 'application/json',
@@ -107,6 +112,34 @@ function initialize(){
             updateSidebar(text);
         })
         .catch((e) => console.error(e));
+
+    for(let i = 0; i < document.getElementsByTagName("h2").length; i++){
+        const newLink = document.createElement("a");
+        newLink.innerHTML = document.getElementsByTagName("h2")[i].textContent;
+        newLink.href = `${link}#${document.getElementsByTagName("h2")[i].textContent}`;
+
+        newLink.onclick = function(){
+            setTimeout(function(){
+                window.history.pushState("", "", `${link}`);
+            },0)
+        }
+
+        document.getElementsByTagName("h2")[i].id = `${document.getElementsByTagName("h2")[i].textContent}`;
+
+        document.getElementById("parent-navigation").appendChild(newLink);
+    }
+
+    document.querySelectorAll(".accordion").forEach(function(elem){
+        for(let i = 0; i < elem.children.length; i++){
+            elem.children[i].addEventListener("click", function(e){
+                if(elem.children[i].classList.contains("active-accordion")){
+                    elem.children[i].classList.remove("active-accordion");
+                } else {
+                    elem.children[i].classList.add("active-accordion");
+                }
+            })
+        }
+    })
 }
 
 initialize();

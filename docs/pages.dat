@@ -14,6 +14,10 @@
 #Features<features>
 (Friending Users)[how-to-friend-user]<add_user>
 (Deleting Account)[how-to-delete-account]<delete_user>
+(Customize Themes)[how-to-change-themes]<theme>
+#Troubleshoot<troubleshoot>
+(Forgot Password)[how-to-recover-password]<forgot_password>
+(Reporting Errors)[report-an-error]<error>
 #Join Elephant<job>
 (Careers)[elephant-careers]<team>
 (Contribute)[contribute-to-elephant]<contribute>
